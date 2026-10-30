@@ -53,7 +53,10 @@ class Island:
         """Clear all the moved flags of all the instances on the island."""
         for x in range(self.__grid_size):
             for y in range(self.__grid_size):
-                #animal = self.__grid[x][y]
+
+                # fetch whats stored at position (x, y)
                 animal = self.animal(x, y)
+                # if the cell is not empty, reset animals move flag
                 if animal != Island.UNOCCUPIED:
+                    # set the animals move flag to False
                     animal.clear_move()
